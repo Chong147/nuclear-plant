@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>福清核电厂</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background: url('background.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            color: #4b0082;
+        }
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        main img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        main p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            animation: float-up 1.5s ease-out both;
+        }
+        main li {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            animation: float-up 1.5s ease-out both;
+        }
+        .quiz {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(240, 248, 255, 0.9);
+            border-radius: 10px;
+        }
+        .quiz h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .quiz button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #4b0082;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .quiz button:hover {
+            background-color: #6a0dad;
+        }
+        .quiz .result {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            animation: float-up 1.5s ease-out both;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #4b0082;
+        }
+        footer a {
+            color: #4b0082;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @keyframes float-up {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+    <script>
+        function checkAnswer(answer) {
+            const result = document.getElementById("quiz-result");
+            // 重置动画
+            result.style.animation = 'none';
+            result.offsetHeight;  // 触发重绘
+            result.style.animation = 'float-up 1.5s ease-out both';
+
+            if (answer === "83%") {
+                result.textContent = "正确答案，福清核电厂的总发电量约占台湾所有核电厂总发电量的83%。";
+                result.style.color = "green";
+            } else {
+                result.textContent = "不正确，再想一想吧！";
+                result.style.color = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>福清核电厂</h1>
+    </header>
+    <main>
+        
+<h2>地理位置</h2>
+<p>福清核电厂位于中国福建省福清市，是福建省第一个核电站，也是我国第一个海岛核电站。</p>
+
+<h2>堆形与数量</h2>
+<p>6台百万千瓦级运行中的压水堆核电机组。</p>
+
+<h2>发电基本原理</h2>
+<p>福清核电厂采用压水堆技术，发电过程包含以下三个主要循环：</p>
+<ol>
+    <li><strong>一回路：</strong>
+        核反应堆内的核燃料通过裂变反应释放热量，热水通过一回路流至蒸汽发生器。</li>
+    <li><strong>二回路：</strong>
+        蒸汽发生器中的水受热变成蒸汽，推动汽轮机发电。</li>
+    <li><strong>三回路：</strong>
+        冷凝器用海水或淡水冷却二回路蒸汽，蒸汽冷凝回水后再次循环。</li>
+</ol>
+
+<h2>功用与贡献</h2>
+<p>福清核电厂自投入运营以来，已成为福建省重要的电力供应源。截至2024年10月31日，福清核电站已累计安全发电超3000亿度，发电量10年连续增长，发电规模创历史新高。至此，福建省三分之一的电力均来自于清洁的核电能源，是清洁能源的标杆之一。</p>
+
+        <img src="fuqing.png" alt="福清核电厂">
+        <div class="quiz">
+            <h2>猜猜福清核电厂的总发电量是台湾所有核电厂总发电量的多少？</h2>
+            <button onclick="checkAnswer('56%')">56%</button>
+            <button onclick="checkAnswer('83%')">83%</button>
+            <button onclick="checkAnswer('110%')">110%</button>
+            <div id="quiz-result" class="result"></div>
+        </div>
+    </main>
+    <footer>
+        <p>© 张武杰 2022080182 工物22</p>
+    </footer>
+</body>
+</html>

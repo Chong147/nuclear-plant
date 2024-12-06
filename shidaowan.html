@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>石岛湾核电厂与国和一号示范工程</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background: url('background.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            color: #4b0082;
+        }
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        main img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        main p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            animation: float-up 1.5s ease-out both;
+        }
+        main li {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            animation: float-up 1.5s ease-out both;
+        }
+        .quiz {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(240, 248, 255, 0.9);
+            border-radius: 10px;
+        }
+        .quiz h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .quiz button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #4b0082;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .quiz button:hover {
+            background-color: #6a0dad;
+        }
+        .quiz .result {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            animation: float-up 1.5s ease-out both;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #4b0082;
+        }
+        footer a {
+            color: #4b0082;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @keyframes float-up {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+    <script>
+        function checkAnswer(answer) {
+            const result = document.getElementById("quiz-result");
+            // 重置动画
+            result.style.animation = 'none';
+            result.offsetHeight;  // 触发重绘
+            result.style.animation = 'float-up 1.5s ease-out both';
+
+            if (answer === "第四代") {
+                result.textContent = "正确答案，石岛湾核电厂是全球首座实现商业化运行的第四代核电站，也是中国具有完全自主知识产权的国家科技重大专项标志性成果。";
+                result.style.color = "green";
+            } else {
+                result.textContent = "不正确，再想一想吧！";
+                result.style.color = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>石岛湾核电厂与国和一号示范工程</h1>
+    </header>
+    <main>
+        
+<h2>地理位置</h2>
+<p>中国山东省荣成市石岛湾</p>
+
+<h2>堆形与数量</h2>
+<p>1台高温气冷堆机组与1台压水堆核电机组</p>
+
+<h2>发电基本原理</h2>
+<p>石岛湾核电厂的高温气冷堆技术是一种创新的核反应堆技术，具有更高的安全性和效率：</p>
+<ol>
+    <li><strong>一回路：</strong>
+        使用惰性气体氦气作为冷却剂，将核反应堆的热量传输至换热器。</li>
+    <li><strong>二回路：</strong>
+        换热器中的水吸收热量形成高温高压蒸汽，推动汽轮机发电。</li>
+    <li><strong>余热处理：</strong>
+        高温气冷堆设计具备自然冷却功能，即使在紧急情况下，也能依靠物理原理安全散热。</li>
+</ol>
+
+<h2>功用与贡献</h2>
+<p>石岛湾核电厂的建成投运标志着我国在第四代核电技术领域达到世界领先水平。该项目在高温气冷堆核心技术上实现自主化，推动了核电产业链升级和装备国产化率提升。石岛湾核电厂不仅为山东省提供了清洁电力，还为全球第四代核电技术的发展树立了重要标杆。</p>
+
+        <img src="shidaowan.png" alt="石岛湾核电厂与国和一号示范工程">
+        <div class="quiz">
+            <h2>石岛湾核电厂属于第几代核电站？</h2>
+            <button onclick="checkAnswer('第二代')">第二代</button>
+            <button onclick="checkAnswer('第四代')">第四代</button>
+            <button onclick="checkAnswer('第五代')">第五代</button>
+            <div id="quiz-result" class="result"></div>
+        </div>
+    </main>
+    <footer>
+        <p>© 张武杰 2022080182 工物22</p>
+    </footer>
+</body>
+</html>
